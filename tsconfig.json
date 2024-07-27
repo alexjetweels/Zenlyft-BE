@@ -6,50 +6,17 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "target": "es2017",
+    "target": "ES2021",
     "sourceMap": true,
     "outDir": "./dist",
     "baseUrl": "./",
     "incremental": true,
     "skipLibCheck": true,
-    "strictNullChecks": false,
+    "strictNullChecks": true,
     "noImplicitAny": false,
     "strictBindCallApply": false,
     "forceConsistentCasingInFileNames": false,
     "noFallthroughCasesInSwitch": false,
-    "esModuleInterop": true,
-    "moduleResolution": "node",
-    "paths": {
-      "@app/core": [
-        "libs/core/src"
-      ],
-      "@app/core/*": [
-        "libs/core/src/*"
-      ],
-      "@app/helper": [
-        "libs/helper/src"
-      ],
-      "@app/helper/*": [
-        "libs/helper/src/*"
-      ],
-      "@app/type": [
-        "libs/type/src"
-      ],
-      "@app/type/*": [
-        "libs/type/src/*"
-      ],
-      "@app/database": [
-        "libs/database/src"
-      ],
-      "@app/database/*": [
-        "libs/database/src/*"
-      ],
-      "@app/jwt-authentication": [
-        "libs/jwt-authentication/src"
-      ],
-      "@app/jwt-authentication/*": [
-        "libs/jwt-authentication/src/*"
-      ]
-    }
+    "esModuleInterop": true
   }
 }
