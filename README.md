@@ -1,5 +1,7 @@
 ## Description <!-- omit in toc -->
 
+Specical thank from : <https://github.com/brocoders/nestjs-boilerplate>
+
 NestJS REST API boilerplate for a typical project
 
 [Full documentation here](/docs/readme.md)
