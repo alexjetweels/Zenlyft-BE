@@ -56,6 +56,9 @@ export class UserEntity extends EntityRelationalHelper {
     this.previousPassword = this.password;
   }
 
+  @Column({ type: String, nullable: true })
+  phone: string | null;
+
   @ApiProperty({
     type: String,
     example: 'email',
