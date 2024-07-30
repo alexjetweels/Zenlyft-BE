@@ -3,7 +3,7 @@ import {
   CreateDateColumn,
   Entity,
   OneToMany,
-  PrimaryColumn,
+  PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
 import { EntityRelationalHelper } from '../../../../../utils/relational-entity-helper';
@@ -11,32 +11,23 @@ import { ApiProperty } from '@nestjs/swagger';
 import { RolePermissionsEntity } from '../../../../../role-permissions/infrastructure/persistence/relational/entities/role-permissions.entity';
 
 @Entity({
-  name: 'role',
+  name: 'permissions',
 })
-export class RoleEntity extends EntityRelationalHelper {
-  @ApiProperty({
-    type: Number,
-  })
-  @PrimaryColumn()
+export class PermissionsEntity extends EntityRelationalHelper {
+  @ApiProperty()
+  @PrimaryGeneratedColumn()
   id: number;
 
-  @ApiProperty({
-    type: String,
-    example: 'admin',
-  })
+  @ApiProperty()
   @Column()
-  name?: string;
+  name: string;
 
   @ApiProperty()
-  @CreateDateColumn({
-    name: 'created_at',
-  })
+  @CreateDateColumn()
   createdAt: Date;
 
   @ApiProperty()
-  @UpdateDateColumn({
-    name: 'updated_at',
-  })
+  @UpdateDateColumn()
   updatedAt: Date;
 
   @OneToMany(

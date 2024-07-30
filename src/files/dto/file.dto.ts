@@ -6,5 +6,12 @@ export class FileDto {
   @IsString()
   id: string;
 
+  @ApiProperty()
   path: string;
+
+  @ApiProperty()
+  createdAt?: Date;
+
+  @ApiProperty()
+  updatedAt?: Date;
 }

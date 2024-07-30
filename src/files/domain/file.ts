@@ -53,4 +53,10 @@ export class FileType {
     },
   )
   path: string;
+
+  @ApiProperty()
+  createdAt?: Date;
+
+  @ApiProperty()
+  updatedAt?: Date;
 }

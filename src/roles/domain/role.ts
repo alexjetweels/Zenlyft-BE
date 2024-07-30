@@ -16,4 +16,10 @@ export class Role {
     example: 'admin',
   })
   name?: string;
+
+  @ApiProperty()
+  createdAt?: Date;
+
+  @ApiProperty()
+  updatedAt?: Date;
 }

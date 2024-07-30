@@ -35,8 +35,13 @@ const infrastructureDatabaseModule = TypeOrmModule.forRootAsync({
   },
 });
 
+import { PermissionsModule } from './permissions/permissions.module';
+
+import { RolePermissionsModule } from './role-permissions/role-permissions.module';
+
 @Module({
   imports: [
+    RolePermissionsModule,
     ConfigModule.forRoot({
       isGlobal: true,
       load: [
@@ -87,6 +92,7 @@ const infrastructureDatabaseModule = TypeOrmModule.forRootAsync({
     MailModule,
     MailerModule,
     HomeModule,
+    PermissionsModule,
   ],
 })
 export class AppModule {}
