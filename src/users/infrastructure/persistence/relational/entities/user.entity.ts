@@ -81,7 +81,7 @@ export class UserEntity extends EntityRelationalHelper {
     example: 'John',
   })
   @Index()
-  @Column({ type: String, nullable: true })
+  @Column({ name: 'first_name', type: String, nullable: true })
   firstName: string | null;
 
   @ApiProperty({
@@ -89,7 +89,7 @@ export class UserEntity extends EntityRelationalHelper {
     example: 'Doe',
   })
   @Index()
-  @Column({ type: String, nullable: true })
+  @Column({ name: 'last_name', type: String, nullable: true })
   lastName: string | null;
 
   @ApiProperty({
@@ -118,14 +118,20 @@ export class UserEntity extends EntityRelationalHelper {
   status?: StatusEntity;
 
   @ApiProperty()
-  @CreateDateColumn()
+  @CreateDateColumn({
+    name: 'created_at',
+  })
   createdAt: Date;
 
   @ApiProperty()
-  @UpdateDateColumn()
+  @UpdateDateColumn({
+    name: 'updated_at',
+  })
   updatedAt: Date;
 
   @ApiProperty()
-  @DeleteDateColumn()
+  @DeleteDateColumn({
+    name: 'deleted_at',
+  })
   deletedAt: Date;
 }

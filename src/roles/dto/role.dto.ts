@@ -6,4 +6,16 @@ export class RoleDto implements Role {
   @ApiProperty()
   @IsNumber()
   id: number;
+
+  @ApiProperty({
+    type: String,
+    example: 'admin',
+  })
+  name?: string;
+
+  @ApiProperty()
+  createdAt?: Date;
+
+  @ApiProperty()
+  updatedAt?: Date;
 }

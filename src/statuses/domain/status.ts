@@ -16,4 +16,16 @@ export class Status {
     example: 'active',
   })
   name?: string;
+
+  @ApiProperty({
+    type: String,
+    example: '2021-09-01T00:00:00.000Z',
+  })
+  createdAt?: Date;
+
+  @ApiProperty({
+    type: String,
+    example: '2021-09-01T00:00:00.000Z',
+  })
+  updatedAt?: Date;
 }
