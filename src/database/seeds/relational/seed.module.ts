@@ -10,6 +10,7 @@ import { UserSeedModule } from './user/user-seed.module';
 import databaseConfig from '../../config/database.config';
 import appConfig from '../../../config/app.config';
 import { PermissionSeedModule } from './permission/permission-seed.module';
+import { RolePermissionSeedModule } from './role-permission/role-permission-seed.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { PermissionSeedModule } from './permission/permission-seed.module';
     StatusSeedModule,
     UserSeedModule,
     PermissionSeedModule,
+    RolePermissionSeedModule,
     ConfigModule.forRoot({
       isGlobal: true,
       load: [databaseConfig, appConfig],

@@ -108,4 +108,28 @@ export class PermissionsController {
   remove(@Param('id') id: number) {
     return this.permissionsService.remove(id);
   }
+
+  @Get('/roles')
+  @ApiOkResponse({
+    type: InfinityPaginationResponse(Permissions),
+  })
+  async findAllRolePermission(
+    @Query() query: FindAllPermissionsDto,
+  ): Promise<InfinityPaginationResponseDto<Permissions>> {
+    const page = query?.page ?? 1;
+    let limit = query?.limit ?? 10;
+    if (limit > 50) {
+      limit = 50;
+    }
+
+    return infinityPagination(
+      await this.permissionsService.findAllWithPagination({
+        paginationOptions: {
+          page,
+          limit,
+        },
+      }),
+      { page, limit },
+    );
+  }
 }
