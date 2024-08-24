@@ -41,9 +41,7 @@ export class UsersService {
       if (userObject) {
         throw new UnprocessableEntityException({
           status: HttpStatus.UNPROCESSABLE_ENTITY,
-          errors: {
-            email: 'emailAlreadyExists',
-          },
+          errors: 'Email already exists',
         });
       }
     }
@@ -55,9 +53,7 @@ export class UsersService {
       if (!fileObject) {
         throw new UnprocessableEntityException({
           status: HttpStatus.UNPROCESSABLE_ENTITY,
-          errors: {
-            photo: 'imageNotExists',
-          },
+          errors: "Image doesn't exist",
         });
       }
       clonedPayload.photo = fileObject;
@@ -70,9 +66,7 @@ export class UsersService {
       if (!roleObject) {
         throw new UnprocessableEntityException({
           status: HttpStatus.UNPROCESSABLE_ENTITY,
-          errors: {
-            role: 'roleNotExists',
-          },
+          errors: "Role doesn't exist",
         });
       }
     }
@@ -84,9 +78,7 @@ export class UsersService {
       if (!statusObject) {
         throw new UnprocessableEntityException({
           status: HttpStatus.UNPROCESSABLE_ENTITY,
-          errors: {
-            status: 'statusNotExists',
-          },
+          errors: "Status doesn't exist",
         });
       }
     }
