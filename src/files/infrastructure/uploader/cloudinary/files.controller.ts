@@ -31,7 +31,7 @@ export class CloudinaryController {
   })
   @ApiBearerAuth()
   @UseGuards(AuthGuard('jwt'))
-  @Post('upload-firebase')
+  @Post('upload-cloudinary')
   @ApiConsumes('multipart/form-data')
   @ApiBody({
     schema: {
