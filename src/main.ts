@@ -16,7 +16,7 @@ import { ResolvePromisesInterceptor } from './utils/serializer.interceptor';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
     cors: {
-      origin: ['http://localhost', 'https://dash.zenlyft.app'], // Allow localhost and dash.zenlyft.app
+      origin: [/^http:\/\/localhost(:[0-9]+)?$/, 'https://dash.zenlyft.app'], // Allow localhost and dash.zenlyft.app
       methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
       credentials: true,
     },

@@ -21,10 +21,9 @@ export class CloudinaryService {
     return new Promise<UploadApiErrorResponse | UploadApiResponse>(
       (resolve, reject) => {
         const uploadStream = cloudinary.uploader.upload_stream(
-          { resource_type: 'image' },
+          { resource_type: 'image', folder: 'zenlyft' },
           (error, result) => {
             if (error) {
-              console.log(error);
               return reject(error);
             }
             resolve(result as UploadApiResponse);
