@@ -45,9 +45,7 @@ export class AuthService {
     if (!user) {
       throw new UnprocessableEntityException({
         status: HttpStatus.UNPROCESSABLE_ENTITY,
-        errors: {
-          email: 'notFound',
-        },
+        errors: 'Wrong email or password',
       });
     }
 
@@ -63,9 +61,7 @@ export class AuthService {
     if (!user.password) {
       throw new UnprocessableEntityException({
         status: HttpStatus.UNPROCESSABLE_ENTITY,
-        errors: {
-          password: 'incorrectPassword',
-        },
+        errors: 'Incorrect email or password',
       });
     }
 
@@ -77,9 +73,7 @@ export class AuthService {
     if (!isValidPassword) {
       throw new UnprocessableEntityException({
         status: HttpStatus.UNPROCESSABLE_ENTITY,
-        errors: {
-          password: 'incorrectPassword',
-        },
+        errors: 'Incorrect email or password',
       });
     }
 
@@ -158,9 +152,7 @@ export class AuthService {
     if (!user) {
       throw new UnprocessableEntityException({
         status: HttpStatus.UNPROCESSABLE_ENTITY,
-        errors: {
-          user: 'userNotFound',
-        },
+        errors: 'User not found',
       });
     }
 
